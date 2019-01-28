@@ -71,5 +71,16 @@ if [ ! -z "$AUTO_CREATE_TOPICS" ]; then
     echo "auto.create.topics.enable=$AUTO_CREATE_TOPICS" >> $KAFKA_HOME/config/server.properties
 fi
 
+# Add Custom values to server.properties
+#echo "" >> $KAFKA_HOME/config/server.properties
+#echo "replica.fetch.max.bytes=20000000" >> $KAFKA_HOME/config/server.properties
+#echo "message.max.bytes=20000000" >> $KAFKA_HOME/config/server.properties
+#echo "max.message.bytes=20000000" >> $KAFKA_HOME/config/server.properties
+
+# Add Custom values to producer.properties
+#echo "" >> $KAFKA_HOME/config/server.properties
+#echo "max.request.size=10000000" >> $KAFKA_HOME/config/producer.properties
+
 # Run Kafka
 $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
